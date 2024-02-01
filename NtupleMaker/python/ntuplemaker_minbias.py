@@ -73,7 +73,7 @@ process.load("Configuration.StandardSequences.MagneticField_cff")
 #-------------------------------------------------------------#
 # NoPileUpfile (Uncomment below file for no pileup dataset)   
 
-files = FileUtils.loadListFromFile("../datasets/CMS_Run2012D_MinimumBias_AOD_22Jan2013-v1_10000_file_index.txt")
+files = FileUtils.loadListFromFile("../datasets/sample_input.txt")
 
 process.source = cms.Source("PoolSource",
                             fileNames = cms.untracked.vstring(
@@ -110,7 +110,7 @@ process.Events = cms.EDAnalyzer('MinimumBiasAnalyzer')
 #          ./AnalysisCodes/InputFiles directory.             #
 #------------------------------------------------------------#
 
-output_filename = "../output/250K/CMS_Run2012D_MinimumBias_AOD_22Jan2013_250Kevts.root"
+output_filename = "../output_files/sample_output.root"
 
 process.TFileService = cms.Service("TFileService",
                                    #if pileup (uncomment this)
